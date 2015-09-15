@@ -1,0 +1,689 @@
+---
+title: 'Code Carrots 3'
+slides:
+  - content: 
+      text: "<div class='margin-top-20 text-center'>\n<h1>Code Carrots II</h1>\n<h3>31 stycznia 2015</h3>\n<h3 class='text-muted'>http://xpla.org/-codeCarrots2</h3>\n</div>"
+      name: "Code Carrots"
+  - content: 
+      left: 
+        code: 
+          content: "dodaj('gora')\ndodaj('ser')\ndodaj('kotlet')\ndodaj('dol')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Jak wygląda wzorowy burger?"
+      name: "Wprowadzenie"
+      microtasks: 
+        - 
+          description: "###Napraw naszego burgera"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'gora'])"
+        - 
+          description: "###Dodaj pomidora i sałatę na ser"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser','pomidor', 'salata', 'gora'])"
+  - content: 
+      left: 
+        code: 
+          content: "dodaj('dol')\ndodaj('kotlet')\n#dodaj('ser')\n#dodaj('salata')\ndodaj('gora')"
+          mode: "python"
+          size: "xxl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Można chwilowo ukrywać składniki za znakiem komentarza: #"
+      name: "Zakomentowany burger"
+      microtasks: 
+        - 
+          description: "###Dodaj sałatę i ser (wystarczy odkomentować linijki 3 i 4)"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'salata', 'gora'])"
+  - content: 
+      microtasks: 
+        - 
+          burgerOutput: "x.length === 8 && equals(x[0], 'dol') && equals(x[x.length - 1],'gora')"
+          description: "###Dodaj jeszcze dwa składniki, aby udoskonalić tego burgera"
+      name: "Mega burger"
+      title: "Jak jeszcze ulepszyć burgera?"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xxl"
+          mode: "python"
+          content: "dodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('salata')\ndodaj('pomidor')\ndodaj('gora')"
+  - content: 
+      left: 
+        code: 
+          content: "dodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('pomidor')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('rukola')\ndodaj('gora')"
+          mode: "python"
+          size: "xxl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Jeśli coś często się zmienia..."
+      name: "Zmienne "
+      microtasks: 
+        - 
+          description: "###Wszędzie gdzie jest rukola wstaw sałatę"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'pomidor', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'gora'])"
+  - content: 
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'pomidor', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'gora'])"
+          description: "###A teraz podmień wartość zmiennej, aby zamienić rukolę na sałatę"
+      name: "Zmienne 2"
+      title: "Składniki można przechowywać w pudełeczkach zwanych zmiennymi"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xxl"
+          mode: "python"
+          content: "# tak wygląda deklaracja zmiennej\r\nzmienna_przechowujaca_dodatek = 'rukola'\r\n\r\ndodaj('dol')\r\ndodaj('kotlet')\r\ndodaj('ser')\r\ndodaj('pomidor')\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj(zmienna_przechowujaca_dodatek)\r\ndodaj('gora')"
+  - content: 
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'salata','pomidor', 'rukola', 'gora'])"
+          description: "###Odkomentuj linijkę 6, następnie zdefiniuj odpowiednią zmienną, aby na sałacie wyświetlany był pomidor"
+      name: "Zmienne 3"
+      title: "Jak definiujemy zmienne?"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xxl"
+          mode: "python"
+          content: "zmienna_przechowujaca_salate = 'salata'\n\ndodaj('dol')\ndodaj('kotlet')\ndodaj(zmienna_przechowujaca_salate)\n#dodaj(zmienna_przechowujaca_pomidora)\ndodaj('rukola')\ndodaj('gora')"
+  - content: 
+      text: "<p>Stwórzmy uniwersalny przepis na burgera dla wszystkich naszych przyjaciół. Robiąc to musimy pamiętać o ich nawykach żywieniowych.</p>\n<p>Dla przykładu: Mirek, jak na prawdziwego mężczyznę przystało, uwielbia mięso! Uwzględniliśmy to w poniższym przepisie.</p>"
+      microtasks: 
+        - 
+          description: "#### Dziś wpadł do nas Mirek, a nie Sebix"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"kotlet\",\"sero\",\"top\"]);"
+          hint: "Popraw wartość zmiennej kto_wpadl_na_burgera."
+        - 
+          description: "#### Dorzuć Mirkowi jeszcze jednego kotleta."
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"kotlet\",\"kotlet\",\"sero\",\"top\"]);"
+          hint: "Dodaj kotleta dla Mirka w bloku warunkowym"
+      title: "Mięsny burger dla Mirka"
+      name: "Mięsny burger dla Mirka"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "md"
+          mode: "python"
+          content: "# Kto dziś do nas wpadł na burgera?\nkto_wpadl_na_burgera = \"Sebix\"\n\n\n# Uniwersalny przepis dla wszystkich naszych znajomych:\ndodaj(\"dol\")\ndodaj(\"salata\")\ndodaj(\"kotlet\");\nif (kto_wpadl_na_burgera == \"Mirek\"):\n    dodaj(\"kotlet\")\ndodaj(\"ser\")\ndodaj(\"gora\")"
+  - content: 
+      left: 
+        code: 
+          content: "# Kto dziś do nas wpadł na burgera?\nkto_wpadl_na_burgera = \"Janusz\"\n\n\n# Uniwersalny przepis dla wszystkich naszych znajomych:\ndodaj(\"dol\")\ndodaj(\"salata\")\ndodaj(\"kotlet\");\nif kto_wpadl_na_burgera == \"Mirek\":\n    dodaj(\"kotlet\")\n    dodaj(\"kotlet\")\ndodaj(\"ser\")\ndodaj(\"gora\")"
+          mode: "python"
+          size: "md"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      name: "Mięsny burger dla Janusza"
+      title: "Mięsny burger dla Janusza"
+      microtasks: 
+        - 
+          hint: "Napisz jeszcze jedną instrukcję warunkową. Cebula powinna znaleźć się na kotlecie."
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"cebula\",\"sero\",\"top\"]);"
+          description: "#### Janusz zamiast (drugiego) kotleta woli cebulę. Ale burger Mirka też powinien działać."
+      text: ""
+  - content: 
+      text: "<h4>Karyna nie lubi mięsa. Dlatego też, w jej burgerze kotlet został zastąpiony sałatą.</h4>"
+      microtasks: 
+        - 
+          description: "Sprawdź jak wygląda burger Sebixa"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"sero\",\"top\"]);"
+          hint: "Popraw wartość zmiennej kto_wpadl_na_burgera."
+        - 
+          description: "Dodaj Karynie jeszcze jedną sałatę"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"salata\",\"salata\",\"sero\",\"top\"]);"
+          hint: "Pamiętaj aby sprawdzić jak wygląda burger Karyny po zmianie przepisu."
+        - 
+          description: "Dodaj jeszcze po jednym kotlecie ( wszystkim tylko nie Karynie )"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"kotlet\",\"sero\",\"top\"]);"
+          hint: "Sprawdź czy burger Sebixa ma dwa kotlety."
+        - 
+          description: "Dodaj wszystkim dodatkowy ser ( Karynie również )"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"kotlet\",\"sero\",\"sero\",\"top\"]);"
+        - 
+          description: "Sprawdź jak wygląda burger Karyny"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"salata\",\"salata\",\"sero\",\"sero\",\"top\"]);"
+      title: "Zielony burger dla Karyny"
+      name: "Zielony burger dla Karyny"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "md"
+          mode: "python"
+          content: "# Kto dziś do nas wpadł na burgera?\nkto_wpadl_na_burgera = \"Karyna\"\n\n\n# Uniwersalny przepis dla wszystkich naszych znajomych\ndodaj(\"dol\")\ndodaj(\"salata\")\nif (kto_wpadl_na_burgera == \"Karyna\"):\n    dodaj(\"salata\")\nelse:\n    dodaj(\"kotlet\")\ndodaj(\"ser\")\ndodaj(\"gora\")"
+  - content: 
+      left: 
+        code: 
+          content: "# Kto dziś do nas wpadł na burgera?\nkto_wpadl_na_burgera = \"Karyna\"\n\n\n# Uniwersalny przepis dla wszystkich naszych znajomych\ndodaj(\"dol\")\ndodaj(\"salata\")\nif (kto_wpadl_na_burgera == \"Karyna\"):\n    dodaj(\"salata\")\nelif (kto_wpadl_na_burgera == \"Grazyna\"):\n    dodaj(\"rukola\")\nelse:\n    dodaj(\"kotlet\")\ndodaj(\"ser\")\ndodaj(\"gora\")"
+          mode: "python"
+          size: "md"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      name: "Burger uniwersalny"
+      title: "Burger uniwersalny"
+      microtasks: 
+        - 
+          hint: "Popraw wartość zmiennej kto_wpadl_na_burgera."
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"sero\",\"top\"]);"
+          description: "#### Sprawdź jak wygląda burger Sebixa"
+        - 
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"rukola\",\"sero\",\"top\"]);"
+          description: "#### Sprawdź jak wygląda burger Grażyny"
+        - 
+          hint: "Sprawdź jak wygląda burger Kasi"
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"bekon\",\"sero\",\"top\"]);"
+          description: "#### Uwzględnij gust Kasi w przepisie"
+      text: "<h4>Grażyna również nie lubi mięsa. Ona, dla odmiany, zastępuje je rukolą.</h4>\n<h4>Kasia gardzi kotletem aczkolwiek mięsko lubi - zamiast kotleta zajada się bekonem</h4>"
+  - content: 
+      left: 
+        code: 
+          content: "# Kto dziś do nas wpadł na burgera?\nimie_goscia = \"Sebix\"\nbmi_goscia = 14\n\n\n# Uniwersalny przepis dla wszystkich naszych znajomych\ndodaj(\"dol\")\ndodaj(\"salata\")\n\nif (imie_goscia == \"Janusz\"):\n    dodaj(\"kotlet\")\n    dodaj(\"kotlet\")\nelse:\n    if (bmi_goscia < 16):\n        dodaj(\"kotlet\")\n        dodaj(\"bekon\")\n        dodaj(\"bekon\")\n    elif (bmi_goscia > 16 and bmi_goscia < 17):\n        dodaj(\"kotlet\")\n        dodaj(\"bekon\")\n    elif (bmi_goscia > 25 and bmi_goscia < 30):\n        dodaj(\"ser\")\n    else:\n        dodaj(\"rukola\")\n\ndodaj(\"gora\")"
+          mode: "python"
+          size: "md"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      name: "Burger dietetyczny"
+      title: "Burger dietetyczny"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"kotlet\",\"bekon\",\"top\"]);"
+          hint: "Sprawdź przepis dla gościa z niskim BMI ( np. BMI = 14 )"
+          description: "#### Popraw przepis dla wygłodzonych gości"
+        - 
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"kotlet\",\"top\"]);"
+          description: "#### Dodaj i sprawdź przepis dla gości z niską i normalną wagą"
+        - 
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"bekon\",\"top\"]);"
+          hint: "Nie ser a bekon! ;)"
+          description: "#### Popraw i sprawdź przepis dla gości z nadwagą"
+        - 
+          burgerOutput: "equals(x, [\"spod\",\"salata\",\"salata\",\"top\"]);"
+          hint: "Dodaj kolejną sekcję elif"
+          description: "#### Uwzględnij Karynę w przepisie i sprawdź jak wygląda jej burger"
+      text: "<h4>Świadome dziewczyny pichcą burgery biorąc pod uwagę BMI gościa.</h4>\n<h4>Kierują się przy tym podaną logiką:</h4>\n<ul>\n<li>Wygłodzeni goście ( BMI < 16 ) powinni dostać burgera z dwoma kotletami i bekonem.</li>\n<li>Wychudzeni goście ( BMI pomiędzy 16 a 17 ) powinni dostać burgera z kotletem i bekonem</li>\n<li>Goście z niską i normalną wagą ( BMI pomiędzy 17 a 25 ) powinni dostać burgera z jednym kotletem.</li>\n<li>Wszyscy z nadwagą (BMI pomiędzy 25 a 30) powinni dostać burgera z bekonem</li>\n<li>Wszyscy otyli (BMI ponad  30) powinni dostać burgera z rukolą</li>\n</ul>\n<h4>Dziewczyny pamiętają o dwóch wyjątkach:</h4.\n<ul>\n<li>Janusz nie dba o wagę! I zawsze jada burgera z dwoma kotletami. Niezależnie od jego BMI.</li>\n<li>Karyna ma anoreksję i mimo, że ma dużą niedowagę jada burgera z podwójną sałatą.</li>\n</ul>"
+  - content: 
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'salata', 'kotlet', 'gora', 'dol', 'salata', 'kotlet', 'gora'])"
+          description: "###Stwórz dwa burgery z kotletem i sałatą."
+        - 
+          burgerOutput: "equals(x, ['dol', 'salata', 'kotlet', 'gora', 'dol', 'salata', 'kotlet', 'gora', 'dol', 'salata', 'kotlet', 'gora'])"
+          description: "###Zamiast dwóch burgerów stwórz trzy!"
+      name: "Funkcje - wstęp"
+      title: "Powtarzanie..."
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "#==============================================#\n#    Burger z kotletem i sałatą                #\n#==============================================#\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\ndodaj('gora')"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#    Trzy burgery z kotletem i sałatą          #\n#==============================================#\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\ndodaj('gora')\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\ndodaj('gora')\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\ndodaj('gora')"
+          mode: "python"
+          size: "xxl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "I teraz wprowadzamy zmiany..."
+      name: "Funkcje - zmiany"
+      microtasks: 
+        - 
+          description: "###Zamień sałatę na pomidora we wszystkich burgerach"
+          burgerOutput: "equals(x, ['dol', 'pomidor', 'kotlet', 'gora', 'dol', 'pomidor', 'kotlet', 'gora', 'dol', 'pomidor', 'kotlet', 'gora'])"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#            Definicja = Przepis               #\n#     Przepis na burgera z kotletem i sałatą   #\n#==============================================#\ndef burger():\n    dodaj('dol')\n    dodaj('salata')\n    dodaj('kotlet')\n    dodaj('gora')\n    \n#==============================================#\n#    Wykonanie funkcji                         #\n#==============================================#\nburger()\n\n"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Wykonajmy ten sam przepis dwa razy"
+      name: "Funkcje - definicja"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'salata', 'kotlet', 'gora', 'dol', 'salata', 'kotlet', 'gora'])"
+          description: "### Stwórz dwa takie same burgery"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#    Przepis na burgera z kotletem i sałatą    #\n#==============================================#\ndef burger_klasyczny():\n    dodaj('dol')\n    dodaj('salata')\n    dodaj('kotlet')\n    dodaj('gora')\n    \n#==============================================#\n#    Wywołanie                                 #\n#==============================================#\n\n"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Wszystkie burgery są robione według tego samego przepisu"
+      name: "Funkcje - przepis"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'salata', 'kotlet', 'gora'])"
+          description: "#### Wykonaj przepis na burger z kotletem i sałatą."
+        - 
+          description: "#### Wykonaj ten sam przepis dwa razy"
+          burgerOutput: "equals(x, ['dol', 'salata', 'kotlet', 'gora', 'dol', 'salata', 'kotlet', 'gora'])"
+  - content: 
+      microtasks: 
+        - 
+          description: "### Zmień składnik burgera z kotleta na kurczaka"
+          burgerOutput: "equals(x, ['dol', 'salata', 'kurczak', 'gora', 'dol', 'salata', 'kurczak', 'gora', 'dol', 'salata', 'kurczak', 'gora'])"
+      name: "Funkcje - zmiany 2"
+      title: "Łatwo możemy zmienić składniki przepisu"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "#==============================================#\n#             Definicja  =  Przepis            #\n#==============================================#\ndef burger():\n    dodaj('dol')\n    dodaj('salata')\n    dodaj('kotlet')\n    dodaj('gora')\n\n#==============================================#\n#  Wywołanie funkcji  =  Gotowanie wg przepisu #\n#==============================================#\nburger()\nburger()\nburger()\n\n"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#    Tutaj napisz przepis na Twojego burgera   #\n#==============================================#\n\n\n#==============================================#\n#   Tutaj wykonaj funkcję                      #\n#==============================================#"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Przećwiczmy tworzenie funkcji"
+      name: "Funkcje 2"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'pomidor', 'ser', 'gora']) || equals(x, ['dol', 'ser', 'pomidor', 'gora'])"
+          description: "### Zdefiniuj i wywołaj funkcję, która wypisuje burgera z serem i pomidorem"
+  - content: 
+      microtasks: 
+        - 
+          description: "### Stwórz dwa burgery. Drugi zamiast sera powinien mieć sałatę."
+          burgerOutput: "equals(x, ['dol', 'pomidor', 'ser', 'gora', 'dol', 'pomidor', 'salata', 'gora'])"
+      name: "Funkcje 2 - argumenty"
+      title: "W przepisach możemy mieć też wariacje"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "#==============================================#\n#  Funkcja musi dostać coś z zewnątrz          #\n#==============================================#\ndef burger():\n    dodaj('dol')\n    dodaj('pomidor')\n    dodaj('ser')\n    dodaj('gora')\n    \n#==============================================#\n# Tutaj wykonaj funkcję i przekaż jej parametr #\n#==============================================#\nburger()\nburger()"
+  - content: 
+      left: 
+        code: 
+          content: "# Przepis na dwa rodzaje burgera\ndef burger(skladnik):\n    dodaj('dol')\n    dodaj('pomidor')\n    dodaj('kotlet')\n    dodaj('gora')\n    \n\n\n# Tutaj wywołujemy funkcje podając różne parametry\nburger(skladnik='ser')\nburger(skladnik='salata')\nburger(skladnik='ziemniok')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Możemy przekazać też inny typ parametrów"
+      name: "Funkcje 2 - parametry 2"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'pomidor', 'ser', 'gora', 'dol', 'pomidor', 'salata', 'gora', 'dol', 'pomidor', 'ziemniok', 'gora'])"
+          description: "### Niech przepis zamiast kotleta  użyje składniku, który mu dajemy"
+  - content: 
+      left: 
+        code: 
+          content: "#================================================#\n# Funkcja wymaga, żeby zawsze podać parametr     #\n# Musimy powiedzieć jaka ma być wartość domyślna #\n#================================================#\ndef burger(z_salata):\n    dodaj('dol')\n    dodaj('pomidor')\n    if z_salata:\n        dodaj('salata')\n    else:\n        dodaj('ser')\n    dodaj('gora')\n    \n\n#===============================================#\n# Tutaj wywołujemy funkcje i mówimy jaką        #\n# wartość wstawić do zmiennej `z_salata`        #\n#===============================================#\nburger(False)\nburger(True)\nburger()"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Parametry mogą być opcjonalne"
+      name: "Funkcje 2 - optional"
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol', 'pomidor', 'ser', 'gora', 'dol', 'pomidor', 'salata', 'gora', 'dol', 'pomidor', 'ser', 'gora'])"
+          description: "### Jeżeli nie podamy z czym chcemy burgera to powinien być z serem"
+  - content: 
+      microtasks: []
+      name: "Funkcje 2.5 - dodaj"
+      title: "Jak działa 'dodaj'?"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        monitor: true
+        code: 
+          size: "lg"
+          mode: "python"
+          content: "#==============================================#\n#        Korzystaliśmy z funkcji od dawna!     #\n#==============================================#\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('gora')"
+  - content: 
+      left: 
+        code: 
+          content: "\ndodaj('dol')\nprint('salata')\nprint('kotlet')\nprint('ser')\nprint('gora')"
+          mode: "python"
+          size: "lg"
+        monitor: true
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Część funkcji jest wbudowana w Pythona"
+      name: "Funkcje 2.5 - dodaj 2"
+      microtasks: []
+  - content: 
+      microtasks: []
+      name: "Funkcje 2.5 - dodaj 3"
+      title: "Możemy zaimplementować 'dodaj' samemu!"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        monitor: true
+        code: 
+          size: "lg"
+          mode: "python"
+          content: "\n#==============================================#\n#  `dodaj` wywołuje tylko funkcję `print`!     #\n#==============================================#\ndef dodaj(co):\n    print(co)\n\ndodaj('dol')\ndodaj('salata')\ndodaj('kotlet')\nprint('ser')\nprint('gora')"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#   Po przecinku wpisujemy więcej parametrów   #\n#==============================================#\ndodaj('dol')\ndodaj('kotlet', 3)\ndodaj('gora')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Funkcje mogą przyjmować wiele parametrów"
+      name: "Funkcje 2.5 - wiele argumentow"
+      microtasks: 
+        - 
+          description: "### Stwórz burgera z podwójną bułką na dole"
+          burgerOutput: "equals(x[0], '2 x dol')"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#   Dodaj drugi parametr do funkcji            #\n#==============================================#\ndef burger(skladnik_a):\n    dodaj('dol')\n    dodaj(skladnik_a)\n    dodaj('gora')\n    \n#==============================================#\n#   Chcemy burgera z kotletem i serem          #\n#   Więc przekazujemy dwa parametry.           #\n#==============================================#\nburger('kotlet', 'ser')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "A jak to wygląda w definicji?"
+      name: "Funkcje 2.5 - wiele argumentow 2"
+      microtasks: 
+        - 
+          description: "### Stwórz przepis, który wymaga dwóch parametrów"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'gora']) || equals(x, ['dol', 'ser', 'kotlet', 'gora'])"
+  - content: 
+      left: 
+        code: 
+          content: "#==============================================#\n#    Napisz definicję funkcji, która stworzy   #\n#    odpowiednie burgery (4 składnikowe).      #\n#                                              #\n#    Nie modyfikuj wywołań, które już są.      # \n#    Pomyśl nad funkcją, która uwzględni       #\n#    wszystkie 3 przypadki.                    #\n#==============================================#\n\nburger() #-------------------------------------# Burger z kotletem i salata\nburger(skladnik='ser') #-----------------------# Burger z kotletem i serem\nburger(czy_wege=True, skladnik='pomidor') #----# Burger z tempehem i pomidorem\n\n#==============================================#\n#   Dla ułatwienia zacznij od pojedynczych     #\n#   przypadków i wykomentuj pozostałe          #\n#==============================================#"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Spróbujmy przećwiczyć funkcje"
+      name: "Funkcje - ćwiczenie"
+      microtasks: 
+        - 
+          description: "### Stwórz funkcję, która wypisze wszystkie burgery"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'salata', 'gora', 'dol', 'kotlet', 'ser', 'gora', 'dol', 'tempeh', 'pomidor', 'gora'])"
+  - content: 
+      microtasks: 
+        - 
+          description: "Wypisz pole małego kółka"
+          jsonOutput: "return equals(x[0], '78.5')"
+        - 
+          description: " Wypisz pole dużego koła"
+          jsonOutput: "return equals(x[1],'153.86')"
+        - 
+          description: " Oblicz obwód koła"
+          jsonOutput: "return equals(x[1],'43.96')"
+        - 
+          description: "Oblicz objętość kuli"
+          jsonOutput: "return equals(x,['523.3333333333334','1436.0266666666666']);"
+      name: "Funkcje - wyniki"
+      title: "Funkcje - wyniki"
+      monitor: true
+      serverRunner: "burger"
+      code: 
+        size: "sm"
+        mode: "python"
+        content: "# ta funkcja obliczy pole koła o podanym promieniu\ndef oblicz(promien):\n    pole = 3.14*promien*promien\n    return pole\n\n# wynik obliczenia dla promienia = 5\nmale_kolko = oblicz(5)\n\n# wypisz pole małego kółka\nprint(\"pole małego kółka\")\n\n# wywołaj funkcję oblicz dla promienia = 7\n# i wynik zapisz do zmiennej duze_kolko\nduze_kolko = 0\n\n# wypisz pole dużego koła\n\n# zmodyfikuj funkcję oblicz, aby zwracała obwód koła\n#\n#   podpowiedź: pole koła = 2*pi*promien :-)\n#   podpowiedź 2: wystarczy zmodyfikować tylko jedną linię kodu\n#   podpowiedź 3: ... linijkę nr 3\n\n# zmodyfikuj funkcję oblicz, aby obliczała objętość kuli\n#\n#  podpowiedź: objętość kuli = 4/3 * pi * promien³\n"
+      text: "<h4>Każda funkcja może mieć swój <strong>wynik</strong></h4>\nZwróć uwagę na słowo <code>return</code>, które znajduje się  na końcu funkcji. Wskazuje ono wartość, która będzie <strong>wynikiem</strong> funkcji."
+  - content: 
+      name: "Funkcja BMI"
+      title: "Funkcja BMI"
+      monitor: true
+      serverRunner: "burger"
+      microtasks: 
+        - 
+          description: "zdefiniuj <code>oblicz_bmi</code>"
+          jsonOutput: "return x[0].substring(0,5) == '23.43' && x[1].substring(0,4) == '31.2'"
+        - 
+          jsonOutput: "return x.length == 3 && x[0].substring(0,5) == '23.43'"
+          description: "wypisz swoje BMI"
+        - 
+          jsonOutput: "return x.length == 4 && x[0].substring(0,5) == '23.43'"
+          description: "BMI mentora"
+        - 
+          jsonOutput: "return x.length >=2 && x[0].substring(0,5) == '27.34' && x[1].substring(0,5) == '35.15'"
+          description: "zjedz burgera *"
+      code: 
+        size: "xl"
+        mode: "python"
+        content: "def oblicz_bmi(waga, wzrost):\n    pass\n\n\n# czy oblicz_bmi działa?\n\nbmi = oblicz_bmi(60,1.60)\nprint(bmi)\n\nprint(oblicz_bmi(80,1.60))\n\n\n\n# wypisz swoje BMI\n\n\n\n# a tutaj wypisz BMI swojego mentora ;-)\n\n\n\n\n# *** zmodyfikuj funkcję BMI, aby symulowała zjedzenie 10 hamburgerów.\n#     podmień jej zawartość tak, aby obliczała BMI dla masy powiększonej o 10 kg\n#     np, oblicz_bmi(masa=70,wzrost=1.70) tak naprawdę zwróci BMI(masa=80,wzrost=1.70)"
+      text: "<h4>Uzupełnij zawartość funkcji <code>oblicz_bmi</code> tak, aby poprawnie obliczyła wskaźnik BMI zwróciła go jako wynik.</h4>\n<p>* jako ostatnie zadanie, sprawdź jak zmieni się BMI, gdy zjesz 10 burgerów! W tym celu zmodyfikuj zawartość funkcji BMI tak, aby trochę oszukiwała i obliczała BMI dla masy o 10 kg większej! :-)</p>"
+  - content: 
+      name: "Funkcje - matma"
+      title: "Funkcje - matma"
+      monitor: true
+      serverRunner: "burger"
+      microtasks: 
+        - 
+          description: "oblicz f(x)=18·x-5 dla liczb od 0 do 10"
+          jsonOutput: "return equals(x,  [\"-5\",   \"13\",   \"31\",   \"49\",   \"67\",   \"85\",   \"103\",   \"121\",   \"139\",   \"157\",   \"175\"])"
+        - 
+          jsonOutput: "return equals(x, [   \"9\",   \"25\",   \"969\",   \"10215\",   \"53257\",   \"187509\",   \"513225\",   \"1176499\",   \"2359305\",   \"4251537\",   \"7000009\" ])"
+          description: "oblicz f(x) = x^6 · (17 - x) + 9"
+        - 
+          jsonOutput: "return x.indexOf(\"27221274\")>-1"
+          description: "suma funkcji"
+        - 
+          jsonOutput: "return x.length>11"
+          description: "No more maths!"
+      code: 
+        size: "xx"
+        mode: "python"
+        content: "# zdefiniuj funkcję f(x) = 18·x - 5\n\n\n\n# wypisz wyniki funkcji f(x) dla x = od 0 do 10\n\n\n\n# a teraz oblicz wyniki funkcji f(x) = x^6 · (17 - x) + 9\n\n\n# oblicz f(2) + f(5) + f(9) + f(15)\n\n\n# możesz popuścić wodze fantazji, stworzyć własną - inną - funkcję\n# i obliczyć jej wartość"
+      text: "Funkcje w programowaniu mają dużo wspólnego z funkcjami matematycznymi. Do funkcji coś wchodzi i coś z niej wychodzi: i w funkcjach Pythonowych, i w funkcjach matematycznych."
+  - content: 
+      microtasks: []
+      name: "Listy - podstawowe zagadnienia"
+      title: "Listy - podstawowe zagadnienia"
+      right: 
+        burger: true
+      left: 
+        monitor: true
+        serverRunner: "burger"
+        code: 
+          size: "sm"
+          mode: "python"
+          content: "#co to jest lista ?\nskladniki = ['dol', 'mieso', 'ser', 'salata', 'gora'] #- dodać do ściągi!!\ntajne_skladniki = [] #-dodać do ściągi!!\n#dodawanie elementów do listy \nskladniki.append('frytki') #- dodać do ściągi!!\n\n\n#usuwanie elementów z listy\nskladniki.remove('mieso') #- dodać do ściągi!!\n\ndel skladniki[2] #- dodać do ściągi!!\n\n#wyswietlanie elementów listy \ndodaj(skladniki[0]) #- dodać do ściągi!!\ndodaj(skladniki[1])\ndodaj(skladniki[3])\ndodaj(skladniki[2])"
+  - content: 
+      microtasks: 
+        - 
+          description: "##Dodaj 5 skladnikow do listy"
+          jsonOutput: "return x[0] ==\"['ser', 'pomidor', 'mieso', 'ziemniok', 'frytki']\""
+        - 
+          description: "##Dodaj dwa nowe skladniki do listy"
+          jsonOutput: "return x[0] ==\"['ser', 'pomidor', 'mieso', 'ziemniok', 'frytki', 'salata', 'ogorek']\""
+        - 
+          description: "## Usun pierwszy skladnik listy"
+          jsonOutput: "return x[0] == \"['pomidor', 'mieso', 'ziemniok', 'frytki', 'salata', 'ogorek']\""
+      name: "Listy - cwiczenia"
+      title: "Listy - cwiczenia"
+      right: 
+        burger: true
+      left: 
+        monitor: true
+        serverRunner: "burger"
+        code: 
+          size: "sm"
+          mode: "python"
+          content: "#stworz liste o nazwie \"skladniki\" z 5 skladnikami: ser, pomidor, mieso, ziemniok, frytki\n\n#dodaj dwa nowe skladniki (salata, ogorek) uzywajac polecenia append\n\n#usun pierwszy skladnik z listy\n\n#usun skladnik z listy ktorego najbardziej nie lubisz\n\nprint(skladniki)\n\n#wyswietl wszystkie skladniki listy jeden pod drugim tak, aby stworzyć burgera."
+  - content: 
+      left: 
+        notes: "Ćwiczenie: Wypisz drugi element tablicy na ekran"
+        code: 
+          content: "#stworz dwie listy:vegetarian i classic, w liscie vegetarian maja znajdowac sie skladniki\n#wegetarianskie natomiast w classic musi byc salata oraz roznego rodzaju mięsa\n\n\n\n#Twój szef zmienia przepis na classic i od teraz w classic musi znajdować się ser i cebula,\n#natomiast nie ma już sałaty\n\n\n\n#do restauracji przychodzi klient. Napisz program który stworzy dla klienta hamburgera w zaleznosci\n#od tego czy bedzie chcial classic czy vegetarian burger. Do wyswietlania hamburgera uzywaj tylko list!!!\n\n\n"
+          mode: "python"
+          size: "sm"
+        serverRunner: "burger"
+        monitor: true
+      right: 
+        burger: true
+      title: "Listy - zadanie"
+      name: "Listy zadanie"
+      microtasks: []
+  - content: 
+      microtasks: []
+      name: "burger niespodzianka"
+      title: "burger niespodzianka"
+      right: 
+        burger: true
+        monitor: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "lg"
+          mode: "python"
+          content: "#burger niespodzianka\r\nimport random\r\n\r\n#przygotuj liste o nazwie \"skladniki\" i wypełnij ją ośmioma składnikami \r\n\r\n# Do naszego sklepu z burgerami przychodzi nasz stary znajomy Mirek. Jego życie stało się nudne i monotonne\r\n# a on chciałby czegoś więcej, odrobinę ryzyka!\r\n# Mirek zamawia burgera z losowymi skladnikami!!! Szaleniec? Być może...\r\n# Pomóż mu!!\r\n#wylosowany_skladnik = (random.choice(skladniki))\r\n\r\n#wylosuj pięć dodatowych skladników i stworz burgera\r\n\r\n#czy niektóre składniki się powtarzają ?\r\n\r\n##############################################################################################\r\n#zastanówmy się jak możemy sprawić, by Mirkowi nie potwórzyły się składniki w burgerze\r\n"
+        notes: "Ćwiczenie: Wypisz drugi element tablicy na ekran"
+  - content: 
+      left: 
+        code: 
+          content: "\ndodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('gora')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Pętle - czy warto się powtarzać?"
+      name: "Pętle 1"
+      microtasks: 
+        - 
+          description: "### Stwórz burgera z potrójną sałatą na serze"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'salata', 'salata', 'salata', 'gora'])"
+  - content: 
+      left: 
+        code: 
+          content: "\ndodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('gora')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Pętle - czy warto się powtarzać?"
+      name: "Pętle 2"
+      microtasks: 
+        - 
+          description: "### A teraz sałata na serze razy siedem"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'gora'])"
+  - content: 
+      name: "Pętle 3"
+      title: "Pętle - da się prościej!"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "dodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\n\nfor licznik in range(3): # zrób coś 3 razy\n    dodaj('pomidor')\n    dodaj('kielki') # można więcej, niż jedną rzecz\n \n# można też określić przedział od-do (odkomentuj 2 poniższe linijki)    \n#for licznik in range(1,4): \n#    dodaj('ziemniok')\n    \ndodaj('gora')"
+  - content: 
+      left: 
+        code: 
+          content: "dodaj('dol')\ndodaj('kotlet')\ndodaj('ser')\ndodaj('gora')"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Pętle - zróbmy to prościej!"
+      name: "Pętle 4"
+      microtasks: 
+        - 
+          description: "###Dodaj sałatę na ser 7 razy używając pętli"
+          burgerOutput: "equals(x, ['dol', 'kotlet', 'ser', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'salata', 'gora'])"
+  - content: 
+      name: "Pętle 5"
+      title: "Pętle są tak sprytne, że wiedzą, co znaczy 'dla każdego'"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "\nskladniki = ['dol', 'kotlet', 'ser', 'salata', 'gora']\n\n# Mozemy policzyć ilość elementów i każdego z nich dodać\nfor element in range(5):\n    dodaj(skladniki[element])\n\n# Ale można też wykorzystać inne polecenie (odkomentuj 2 poniższe linijki)\n#for element in skladniki: #dla każdego elementu w liście o nazwie 'skladniki'\n#    dodaj(element)\n \n# Można też zmieniać nazwy, tylko trzeba pamiętać o konsekwencjach (odkomentuj 2 poniższe linijki)\n#for kazdySkladnik in skladniki: # zamiast 'element' można użyć dowolnej nazwy\n#    dodaj(element) # ale trzeba być konsekwentnym wewnątrz pętli"
+  - content: 
+      left: 
+        code: 
+          content: "\n# sprawdzamy parzystość liczby przez jej resztę z dzielenia przez 2\n# jeśli reszta z dzielenia jest równa zero, znaczy, że liczba dzieli się przez 2\n# zapisujemy resztę z dzielenia jako: liczba % 2\n\n"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Pętle - liczby parzyste i nieparzyste"
+      name: "Pętle 6"
+      microtasks: 
+        - 
+          description: "### W przedziale od 1 do 12 dla każdej liczby parzystej wyświetl sałatę, dla nieparzystej kotlet (pamiętacie jeszcze instrukcje warunkowe if-else?)"
+          burgerOutput: "equals(x, ['kotlet','salata','kotlet','salata','kotlet','salata','kotlet','salata','kotlet','salata', 'kotlet'])"
+  - content: 
+      left: 
+        code: 
+          content: "liczby = [1,2,3,5,8,13,21,34]\n\n"
+          mode: "python"
+          size: "xl"
+        serverRunner: "burger"
+      right: 
+        burger: true
+      title: "Pętle - liczby parzyste i nieparzyste"
+      name: "Pętle 7"
+      microtasks: 
+        - 
+          description: "### A teraz to samo dla podanej tablicy liczb - sałata dla parzystych, kotlet dla nieparzystych"
+          burgerOutput: "equals(x, ['kotlet','salata','kotlet','kotlet', 'salata', 'kotlet', 'kotlet', 'salata'])"
+  - content: 
+      microtasks: 
+        - 
+          burgerOutput: "equals(x, ['dol','kotlet', 'ser', 'salata','pomidor','gora'])"
+          description: "### Stwórz funkcję, która przyjmuje listę składników i wyświetla je za pomocą pętli. Następnie wywołaj tę funkcję, podając jako argument poniższą listę"
+      name: "Pętla + Funkcja"
+      title: "Ukoronowanie Pętli, czyli jak połączyć pętlę z funkcją?"
+      right: 
+        burger: true
+      left: 
+        serverRunner: "burger"
+        code: 
+          size: "xl"
+          mode: "python"
+          content: "\nskaldniki = ['dol','kotlet', 'ser', 'salata','pomidor','gora']\n\n        "
